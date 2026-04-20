@@ -1,38 +1,262 @@
-.App {
-  text-align: center;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  color: #222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ROOT */
+#root {
+  width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* HEADER */
+.header {
+  width: 100%;
+  background: #111;
+  color: white;
+  padding: 18px 30px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+
+.header h2 {
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #f4b400;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #111, #333);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.hero button {
+  padding: 12px 24px;
+  border: none;
+  background: #f4b400;
+  color: #111;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SECTION */
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* SERVICES */
+.cards {
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* FORM */
+.formWrap {
+  padding: 50px 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  gap: 14px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form button {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+small {
+  color: red;
+}
+
+/* ADMIN */
+.admin {
+  padding: 50px 20px;
+}
+
+.admin h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin select {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* TABLE SCROLL FIX */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  white-space: nowrap;
+}
+
+th {
+  background: #111;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  table {
+    min-width: 800px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero button,
+  form button {
+    width: 100%;
+  }
+
+  table {
+    min-width: 750px;
   }
 }
